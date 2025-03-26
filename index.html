@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz Master | Home</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body class="gradient-background">
+    <main class="main">
+      <header class="header">
+        <a href="index.html" class="logo"
+          ><img src="logo.gif" alt="" style="width: 70px; border-radius: 30%"
+        /></a>
+        <nav class="navbar">
+          <a href="index.html" class="active">Home</a>
+          <a href="leaderboard.html">Leaderboard</a>
+          <a href="about.html">About</a>
+          <a href="contactus.html">Contact us</a>
+        </nav>
+      </header>
+
+      <section class="home active">
+        <div class="home-content">
+          <h1 id="heading">Quizzum</h1>
+          <p id="details">
+            Welcome to Quizzum! Test your knowledge and challenge yourself.
+          </p>
+
+          <button class="button" id="startQuiz">Start Quiz</button>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const startQuizButton = document.getElementById("startQuiz");
+        startQuizButton.addEventListener("click", () => {
+          window.location.href = "categories.html";
+        });
+      });
+    </script>
+  </body>
+</html>

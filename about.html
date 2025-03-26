@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About - Quiz App</title>
+    <link rel="stylesheet" href="index.css" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background-color: #f4f4f4;
+        padding: 20px;
+      }
+      .container {
+        max-width: 600px;
+        margin: auto;
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      }
+      h1 {
+        color: #333;
+      }
+      .developer {
+        background: #e3e3e3;
+        padding: 10px;
+        margin: 10px 0;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        text-align: left;
+      }
+      .developer img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        margin-right: 15px;
+      }
+      .developer-info {
+        flex-grow: 1;
+      }
+      .developer h3 {
+        margin: 5px 0;
+      }
+      .developer p {
+        margin: 5px 0;
+        color: #666;
+      }
+      .linkedin {
+        display: inline-block;
+        margin-top: 5px;
+        padding: 5px 10px;
+        background: #0077b5;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+      }
+      .back-button {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 10px 20px;
+        background: #007bff;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body class="gradient-background">
+    <header class="header">
+      <a href="index.html" class="logo"
+        ><img src="logo.gif" alt="" style="width: 70px; border-radius: 30%"
+      /></a>
+      <nav class="navbar">
+        <a href="index.html" class="active">Home</a>
+        <a href="leaderboard.html">Leaderboard</a>
+        <a href="about.html">About</a>
+        <a href="contactus.html">Contact us</a>
+      </nav>
+    </header>
+    <div class="container">
+      <h1>About This Quiz</h1>
+      <p>
+        This quiz app is designed to test your knowledge on various topics.
+        Answer the questions and see how much you score!
+      </p>
+
+      <h2>Developers</h2>
+      <div class="developer">
+        <img src="tanmay.jpeg" alt="Developer 1" />
+        <div class="developer-info">
+          <h3>Tanmay Pandey</h3>
+          <p><strong>Role:</strong> Backend Developer</p>
+          <p><strong>Email:</strong> tanmay.pandey@vitstudent.ac.in</p>
+          <a
+            class="linkedin"
+            href="https://www.linkedin.com/in/tanmay-pandey-b50320280/"
+            target="_blank"
+            >LinkedIn</a
+          >
+        </div>
+      </div>
+      <div class="developer">
+        <img src="manthan.jpeg" alt="Developer 2" />
+        <div class="developer-info">
+          <h3>Kumar Manthan</h3>
+          <p><strong>Role:</strong> Frontend Developer</p>
+          <p><strong>Email:</strong> kumar.manthan@vitstudent.ac.in</p>
+          <a
+            class="linkedin"
+            href="https://www.linkedin.com/in/kumar-manthan-b4b629358/"
+            target="_blank"
+            >LinkedIn</a
+          >
+        </div>
+      </div>
+
+      <a href="index.html" class="back-button">Back to Home</a>
+    </div>
+  </body>
+</html>
