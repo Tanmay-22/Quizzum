@@ -104,7 +104,7 @@ document.addEventListener("DOMContentLoaded", function () {
     restartButton.addEventListener("click", () => {
       console.log("Restart Clicked - Score Before Update:", score);
     updateScore(); 
-    setTimeout(() => window.location.reload(), 100); 
+    setTimeout(() =>window.location.href = "categories.html", 100); 
     });
 
     homeButton.addEventListener("click", () => {

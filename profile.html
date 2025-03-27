@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Profile</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(to right, #6a11cb, #2575fc);
+      }
+      .gradient-background {
+        background: linear-gradient(223deg, #1230ae, #6c48c5, #c68fe6, #fff7f7);
+        background-size: 240% 240%;
+        animation: gradient-animation 24s ease infinite;
+      }
+
+      @keyframes gradient-animation {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      .form-box {
+        background-color: white;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        text-align: center;
+        width: 1000px;
+      }
+
+      .user-info {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        margin-bottom: 20px;
+      }
+
+      .user-photo {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        margin-right: 20px;
+      }
+
+      .user-details {
+        text-align: left;
+      }
+
+      .user-details p {
+        margin: 0;
+      }
+
+      .user-name {
+        font-size: 40px;
+        font-weight: bold;
+      }
+
+      .progress-card {
+        background-color: #f9f9f9;
+        color: black;
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .progress-bar {
+        background-color: #6a11cb;
+        height: 30px;
+        border-radius: 5px;
+      }
+
+      .progress-title {
+        font-size: 22px;
+        margin-bottom: 10px;
+        color: #2575fc;
+      }
+
+      .progress-label {
+        font-size: 18px;
+        margin-bottom: 5px;
+      }
+
+      .btn-primary {
+        padding: 12px 20px;
+        border-radius: 10px;
+        width: 100%;
+        font-size: 18px;
+      }
+
+      .user-stats {
+        margin-top: 20px;
+        text-align: left;
+      }
+
+      .user-stats p {
+        font-size: 16px;
+        margin: 5px 0;
+      }
+    </style>
+  </head>
+  <body class="gradient-background">
+    <div class="form-box">
+      <!-- User Info Section -->
+      <div class="user-info">
+        <img
+          src="data:image/jpeg;base64,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"
+          alt="User Photo"
+          class="user-photo"
+        />
+        <div class="user-details">
+          <p class="user-name">Manthan</p>
+          <p><b>Email:</b> mann.sthann@vitstudent.com</p>
+          <p><b>ID:</b> 123456</p>
+        </div>
+      </div>
+
+      <!-- User Stats Section -->
+      <div class="user-stats">
+        <p>Number of Quizzes Attended: 5</p>
+        <p>Best Score: 95%</p>
+        <p>Average Score: 80%</p>
+      </div>
+
+      <!-- Progress Cards -->
+      <div class="progress-card">
+        <p class="progress-title">Quiz 1: General Knowledge</p>
+        <div class="progress-label">Your Score: 70%</div>
+        <div class="progress">
+          <div class="progress-bar" style="width: 70%"></div>
+        </div>
+      </div>
+
+      <div class="progress-card">
+        <p class="progress-title">Quiz 2: Science Trivia</p>
+        <div class="progress-label">Your Score: 85%</div>
+        <div class="progress">
+          <div class="progress-bar" style="width: 85%"></div>
+        </div>
+      </div>
+
+      <div class="progress-card">
+        <p class="progress-title">Quiz 3: History Quiz</p>
+        <div class="progress-label">Your Score: 95%</div>
+        <div class="progress">
+          <div class="progress-bar" style="width: 95%"></div>
+        </div>
+      </div>
+
+      <a
+        href="index.html
+      "
+        class="btn btn-primary mt-4"
+        >Back to Dashboard</a
+      >
+      <a
+        href="edit-profile.html
+      "
+        class="btn btn-primary-dark mt-4"
+        >Edit Profile</a
+      >
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
