@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
   
  
     categoryCards.forEach((card) => {
-      card.addEventListener("click", function () {
+      card.addEventListener("click", function () {  
       
         const selectedCategory = card.getAttribute("data-category");
         localStorage.setItem("selectedCategory", selectedCategory);
