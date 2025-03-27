@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz Master | Quiz</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body class="gradient-background">
+    <header class="header">
+      <a href="/" class="logo"
+        ><img src="logo.gif" alt="" style="width: 70px; border-radius: 30%"
+      /></a>
+      <nav class="navbar">
+        <a href="/" class="active">Home</a>
+        <a href="/leaderboard">Leaderboard</a>
+        <a href="/about">About</a>
+        <a href="/contactus">Contact us</a>
+        <% if(user==''){ %>
+        <a href="/login">Login</a>
+        <a href="/signup">Sign Up</a>
+        <% } else{ %>
+        <a class="nav-link text-white mx-2" href="/profile"
+          ><img
+            style="width: 35px; border-radius: 50%; padding: 0"
+            src="data:image/png;base64,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"
+            alt="Profile"
+        /></a>
+        <% } %>
+      </nav>
+    </header>
+
+    <main class="main">
+      <section class="quiz-section active">
+        <div class="quiz-box">
+          <h2 class="question-text" id="question-text"></h2>
+          <div class="option-list" id="option-list"></div>
+          <div class="quiz-footer">
+            <span class="question-progress" id="question-progress"></span>
+            <button
+              class="next-button button"
+              id="nextBtn"
+              style="display: none"
+            >
+              Next Question
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="result-section">
+        <div class="result-box">
+          <h2>Quiz Result!</h2>
+          <p class="score-text">
+            Your Score: <span id="score">0</span>/<span id="total-questions"
+              >0</span
+            >
+          </p>
+          <div class="result-buttons">
+            <button class="restart-button button" id="restartBtn">
+              Restart Quiz
+            </button>
+            <button class="home-button button" id="homeBtn">Home</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      const response = JSON.stringify(response);
+      let score = 0;
+      document.addEventListener("DOMContentLoaded", function () {
+        const quizSection = document.querySelector(".quiz-section");
+        const resultSection = document.querySelector(".result-section");
+        const nextButton = document.getElementById("nextBtn");
+        const restartButton = document.getElementById("restartBtn");
+        const homeButton = document.getElementById("homeBtn");
+
+        let currentQuestionIndex = 0;
+        let questions = [];
+
+        async function fetchQuestions() {
+          if (!response) {
+            console.log("Requesting questions from server...");
+
+            // const response = await fetch("http://localhost:3000/getquestions");
+            // console.log(response);
+
+            if (!response.ok)
+              throw new Error(`HTTP error! Status: ${response.status}`);
+
+            console.log("Received response from server");
+
+            const data = await response.json(); // Convert response to JSON
+            console.log("Received questions from server:", data);
+
+            if (!data || !data.results) throw new Error("Invalid data format");
+
+            questions = data.results.map((q) => ({
+              question: q.question,
+              correct: q.correct_answer,
+              options: [...q.incorrect_answers, q.correct_answer].sort(
+                () => Math.random() - 0.5
+              ),
+            }));
+
+            console.log("Processed questions:", questions);
+            showQuestion(); // Call function to display questions
+          } else {
+            console.error("Error fetching questions:", error);
+            alert("Failed to load questions. Please try again.");
+          }
+        }
+
+        function showQuestion() {
+          const question = questions[currentQuestionIndex];
+          const options = shuffleArray(question.options);
+
+          document.getElementById("question-text").innerHTML =
+            question.question;
+          const optionList = document.getElementById("option-list");
+          optionList.innerHTML = "";
+          options.forEach((option) => {
+            const optionDiv = document.createElement("div");
+            optionDiv.classList.add("option-item");
+            optionDiv.textContent = option;
+            optionDiv.addEventListener("click", function () {
+              selectOption(optionDiv);
+            });
+            optionList.appendChild(optionDiv);
+          });
+          document.getElementById(
+            "question-progress"
+          ).textContent = `Question ${currentQuestionIndex + 1} of ${
+            questions.length
+          }`;
+        }
+
+        function selectOption(selectedOption) {
+          const options = document.querySelectorAll(".option-item");
+          const correctAnswer = questions[currentQuestionIndex].correct;
+          options.forEach((option) => {
+            option.style.pointerEvents = "none";
+            if (option.textContent === correctAnswer) {
+              option.style.backgroundColor = "#90EE90";
+            }
+            if (
+              option === selectedOption &&
+              option.textContent !== correctAnswer
+            ) {
+              option.style.backgroundColor = "#FFB6C1";
+            }
+          });
+          if (selectedOption.textContent === correctAnswer) {
+            score++;
+          }
+          nextButton.style.display = "block";
+        }
+
+        nextButton.addEventListener("click", () => {
+          currentQuestionIndex++;
+          if (currentQuestionIndex < questions.length) {
+            resetOptions();
+            showQuestion();
+          } else {
+            quizSection.classList.remove("active");
+            resultSection.classList.add("active");
+            showResult();
+          }
+        });
+
+        function resetOptions() {
+          const options = document.querySelectorAll(".option-item");
+          options.forEach((option) => {
+            option.style.backgroundColor = "white";
+            option.style.pointerEvents = "auto";
+          });
+          nextButton.style.display = "none";
+        }
+
+        function showResult() {
+          document.getElementById("score").textContent = score;
+          document.getElementById("total-questions").textContent =
+            questions.length;
+        }
+
+        function shuffleArray(array) {
+          return array.sort(() => Math.random() - 0.5);
+        }
+
+        restartButton.addEventListener("click", () => {
+          console.log("Restart Clicked - Score Before Update:", score);
+          updateScore();
+          setTimeout(() => (window.location.href = "categories.html"), 100);
+        });
+
+        homeButton.addEventListener("click", () => {
+          console.log("Home Clicked - Score Before Update:", score);
+          updateScore();
+          setTimeout(() => (window.location.href = "index.html"), 100);
+        });
+
+        fetchQuestions();
+      });
+
+      function updateScore() {
+        let csvData = JSON.parse(localStorage.getItem("csvData")) || [];
+
+        if (typeof score === "undefined") {
+          // console.error(" Score is undefined! Make sure it is declared globally.");
+          return;
+        }
+
+        if (csvData.length > 0) {
+          console.log("Before Updating Score:", csvData);
+          csvData[csvData.length - 1][2] = parseInt(score, 10) || 0;
+
+          localStorage.setItem("csvData", JSON.stringify(csvData));
+          console.log("Updated Score:", localStorage.getItem("csvData"));
+        } else {
+          // console.warn(" No data found in localStorage.");
+        }
+      }
+    </script>
+  </body>
+</html>

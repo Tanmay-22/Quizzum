@@ -1,0 +1,28 @@
+{
+  "name": "quizzum_with_back",
+  "version": "1.0.0",
+  "description": "quiz- master\r #\u0000 \u0000w\u0000e\u0000b\u0000-\u0000p\u0000r\u0000o\u0000j\u0000e\u0000c\u0000t\u0000\r\u0000 \u0000",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tanmay-22/Quizzum.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tanmay-22/Quizzum/issues"
+  },
+  "homepage": "https://github.com/Tanmay-22/Quizzum#readme",
+  "dependencies": {
+    "axios": "^1.8.4",
+    "body-parser": "^2.2.0",
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "pg": "^8.13.3"
+  }
+}

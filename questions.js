@@ -12,19 +12,37 @@ document.addEventListener("DOMContentLoaded", function () {
 
     async function fetchQuestions() {
       try {
-        const response = await fetch("https://opentdb.com/api.php?amount=10&type=multiple");
-        const data = await response.json();
-        questions = data.results.map((q) => ({
-          question: q.question,
-          correct: q.correct_answer,
-          options: [...q.incorrect_answers, q.correct_answer],
-        }));
-        showQuestion();
+          console.log("Requesting questions from server...");
+  
+          const response = await fetch("http://localhost:3000/getquestions");
+          console.log(response);
+  
+          if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+  
+          console.log("Received response from server");
+  
+          const data = await response.json();  // Convert response to JSON
+          console.log("Received questions from server:", data);
+  
+          if (!data || !data.results) throw new Error("Invalid data format");
+  
+          questions = data.results.map((q) => ({
+              question: q.question,
+              correct: q.correct_answer,
+              options: [...q.incorrect_answers, q.correct_answer].sort(() => Math.random() - 0.5),
+          }));
+  
+          console.log("Processed questions:", questions);
+          showQuestion();  // Call function to display questions
       } catch (error) {
-        console.error("Error fetching questions:", error);
-        alert("Failed to load questions. Please try again.");
+          console.error("Error fetching questions:", error);
+          alert("Failed to load questions. Please try again.");
       }
-    }
+  }
+  
+
+  
+  
   
    
     function showQuestion() {

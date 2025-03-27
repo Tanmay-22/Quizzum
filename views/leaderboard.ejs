@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Monthly Leaderboard</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="index.css" />
+    <script
+      src="https://kit.fontawesome.com/a076d05399.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      body {
+        background: linear-gradient(to right, #6a11cb, #2575fc);
+        color: white;
+        text-align: center;
+        font-family: "Poppins", sans-serif;
+      }
+
+      .gradient-background {
+        background: linear-gradient(223deg, #1230ae, #6c48c5, #c68fe6, #fff7f7);
+        background-size: 240% 240%;
+        animation: gradient-animation 24s ease infinite;
+      }
+
+      @keyframes gradient-animation {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      .leaderboard-box {
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
+        color: white;
+        padding: 30px;
+        border-radius: 20px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        width: 700px;
+        margin: 50px auto;
+      }
+
+      h1 {
+        font-size: 28px;
+        margin-bottom: 20px;
+      }
+
+      .top-player {
+        font-weight: bold;
+        font-size: 22px;
+        color: #ffcc00;
+      }
+
+      table {
+        width: 100%;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        overflow: hidden;
+      }
+
+      th,
+      td {
+        padding: 12px;
+        text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      th {
+        background-color: rgba(255, 255, 255, 0.2);
+        color: white;
+      }
+
+      tr:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+        transition: 0.3s;
+      }
+
+      .gold {
+        color: #ffcc00;
+        font-weight: bold;
+      }
+
+      .silver {
+        color: #c0c0c0;
+        font-weight: bold;
+      }
+
+      .bronze {
+        color: #cd7f32;
+        font-weight: bold;
+      }
+
+      .refresh-btn {
+        background-color: #ffcc00;
+        color: black;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 10px;
+        font-size: 16px;
+        cursor: pointer;
+        margin-top: 20px;
+        transition: 0.3s;
+      }
+
+      .refresh-btn:hover {
+        background-color: #e6b800;
+      }
+
+      .countdown {
+        font-size: 14px;
+        margin-top: 10px;
+        color: white;
+      }
+    </style>
+  </head>
+  <body class="gradient-background">
+    <header class="header">
+      <a href="/" class="logo"
+        ><img src="logo.gif" alt="" style="width: 70px; border-radius: 30%"
+      /></a>
+      <nav class="navbar">
+        <a href="/" class="active">Home</a>
+        <a href="/leaderboard">Leaderboard</a>
+        <a href="/about">About</a>
+        <a href="/contactus">Contact us</a>
+        <% if(user==''){ %>
+        <a href="/login">Login</a>
+        <a href="/signup">Sign Up</a>
+        <% } else{ %>
+        <a class="nav-link text-white mx-2" href="/profile"
+          ><img
+            style="width: 35px; border-radius: 50%; padding: 0"
+            src="data:image/png;base64,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"
+            alt="Profile"
+        /></a>
+        <% } %>
+      </nav>
+    </header>
+    <div
+      class="leaderboard-box py-40"
+      style="margin-top: 100px; margin-left: auto; margin-right: auto"
+    >
+      <h1>🏆 Leaderboard 🏆</h1>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Rank</th>
+            <th>Player</th>
+            <th>Correct Answers</th>
+          </tr>
+        </thead>
+        <tbody id="leaderboard"></tbody>
+      </table>
+    </div>
+
+    <script>
+      const rows = <%- JSON.stringify(rowdata) %>;
+    </script>
+
+    <script>
+      console.log("Leaderboard rows from server:", rows);
+
+      function generateLeaderboard() {
+        const tableBody = document.getElementById("leaderboard");
+        tableBody.innerHTML = "";
+
+        rows.forEach((player, index) => {
+          let rankClass =
+            index === 0
+              ? "gold"
+              : index === 1
+              ? "silver"
+              : index === 2
+              ? "bronze"
+              : "";
+          let icon =
+            index === 0 ? "🥇" : index === 1 ? "🥈" : index === 2 ? "🥉" : "";
+
+          tableBody.innerHTML += `
+      <tr>
+        <td class="${rankClass}">${icon} ${index + 1}</td>
+        <td>${player.username}</td>
+        <td>${player.score}</td>
+      </tr>
+    `;
+        });
+      }
+
+      generateLeaderboard();
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

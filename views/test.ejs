@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz Master | Quiz</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body class="gradient-background">
+    <header class="header">
+      <a href="/" class="logo"
+        ><img src="logo.gif" alt="" style="width: 70px; border-radius: 30%"
+      /></a>
+      <nav class="navbar">
+        <a href="/" class="active">Home</a>
+        <a href="/leaderboard">Leaderboard</a>
+        <a href="/about">About</a>
+        <a href="/contactus">Contact us</a>
+
+        <a class="nav-link text-white mx-2" href="/profile"
+          ><img
+            style="width: 35px; border-radius: 50%; padding: 0"
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKAAAACUCAMAAAAj+tKkAAAAPFBMVEWmpqb////y8vKioqL19fX4+Pifn5/7+/vt7e2qqqqtra2xsbG0tLTCwsLMzMzPz8/e3t7X19e7u7vm5ubXEOS+AAAHHUlEQVR4nMWc2XLkIAxFbYPxvmD+/18Ht5N0G7NdAT33IVVTU8EnYpEEgqpOVtf0Sq7LMVXsR8MwL6tUfdOlt14lwmm0Y6yEYKy6iTEhqvHQmImQCYAdl8dwolROnf83zJInQFIBO7XN2kZREmLeyIakAbbrPETS/TBW89p+C7BVs/B0q7O7xawIjDBgJ0l4P4gb3NMgYLcNNLhfxgFFhABbiY08m8QgoY5GANVE7FvDipMqAthMydb7lZia7IDdWmUx3yVWrZkB+zy9+4E49hkBuzUz3gtxjZrPMYD8yDb6PiUOngdQ+cKBFDEWMZ3DgLIQ3gtRpgMuBfk04ZII2JYZfm+JI+BXAoBzUfudYnMCIB+L82mNXhv6AHnu1dmh2bfceAC7r9ivOr0KCbAtP/7+CGd3L7sBj6/xacIDByy9vtwlnIQuwO2L9jvFNgxw/zKfJtwRwOar/XtJ2KNsK+AXJ/CH7FPZCrhQDKiDsmEYxlH/8O7XOCWsgYMNcCfwCTavcleq75Xa5TozShu2YWgBbAi5+ST7puFa10/e9JLgJwfLMLQAohEgqxbVarK7eKsWFNAWHT4BFdg54lD8gfdC5Apd7cUzB3gAdpj92CBbG92lVg5gc2FAzIWwqbda78+KPbZiPR2KCdhDM4Qtfj5N2GBDejDzeRMQao4tz8nxnCxgk35AyMexI4j3QoQCN9PjGYBHfj6U8PABKqChqmpiARuoWeUBhIbLHsmnCZHozRiFN8AeGYFLNJ8mRP5y0TsBVwSwj+fTyyHQMFtdgIgTEZvHgTzVbsDfzloHILKPNSAG1IJMKO2AHbDGsBUYgS8ho/DorICqzBS+xHeg8c+V5gNQAsNkAu2nNcW3LjYrIBAmaCeM8kEuebABIm5YoD189jHSfmMBRAJBAc7hU4gX+AgL34Bz/O9XFdzD2oRI+/MTEMrlRgJgOwIfeOd3f4DQMnBQAJGg671W/wEip12sPOBqAnZIcvMFwLkzAKEhXB6wqrgBCIWC5cfgOyj8BUT8nPZ0FEDA12lAaQBi2SuDHYleB7EvLAYg9OcV9yRakwEI/XJxX3zqDghNYq3C0cwpfgPswd8uGw+eYv0NED52KBtRv75wA5Tgb7MVNSBcOCKTALG0uMGyOhsg/PextVxe/POBNEDQhLgBkwEZtjeTCkgoPmGFdrd+m19SAbW/i90fxDs4CyA7Yi1IObzPABhNSCouMABp9XciZqJw0tlphmXm1coS2qdGz0kyA1ZsVP6TJkUtvjEAyTUUmc/qPhreEn3xn8Sk7P3MGzUn1D7cfTEcDH2KLYo/zNjyHXcfn43ewy00YDUaGybZt+3vsTHnvO3lRO7dq817wIqG/A8JMS5nzcKpXa4j9ULCW/eQH0yarDrLPkatoUqnq8ykCUw7vyAz7SxbS4vrkbhjWx/l9dj6APP+4npsHqVOYyaEnhrjOE3TeP4j1ySmbWAabHr2Tsum+qvo6FV3tMtlGhIWwucGJjlcENWx7j03qiu4Xrb7fT0q4sh5bgHTnB0To9Se2BHQvEq4iEv2/gAklJSx0Va0ZbjkVi2EiMtyDIEd5Jx4YnMUbZl2VBtsRctBDloTVa2xRR9nV4M3oqxHYWBNj8K2PhS1uod0HMuqPdp8v1ZsdqRutLYBRnu7cKpkR4z2944D7diyIyYJeCchjx7m9pKAuKKKUB7nRYzM8RxFFVFlKaGKxgBh1AVCV1lKTGEPm1P4IisyWecADPtjdoQrGgOE4SM7d2lUMChkM2X6GoRNyIae4rJA4J+DL0zoK88LrDRD2vj7I+z91Qu+Akd/iSh+QOcg9IZ23hJR3ygUvl0iTK1nQRO9F9A9CkllAE5C51QOlSm7C70nwhGxW70r+gwWejvDwlwD8JJrGIZL5R3uJGsHvwgdnWziRF/XyIt3ymqHiOsa1nmCV4QGxS1+Ne7Ciy2/yztDLvXPDbXIK0PPS1dgTXKc2sd0jL109by2RimTCYsbX4m/tmZe/BPY4XWsWqPwHbj4Z6agqgRf09xDE+Tq5L0KRCdxhfS5XmCXT+8OhZjFBcU/jo/Q67u3C9AF1phLb8ePX4B+XyHP7uXeat/fcGKEL+GLUj189vHVTbRL+HV9ZdmsWA/rPr6+MHpenvE+BPEK2uZiBmx+Ks6oD0HoXtY2LBAnfOhcaAbyUxr16zGSvJHqXTpuTXqMRNtwQe8GYYCqSnzOpa7LzeGXXOtzPGBdbBU8FX44KuJRpu5/8sW9u1XKF8d8O+7lsjLxYNSnY99+y580RX44FjC3EaPfIIwGzGrEWPNhgHWXa/sNeWUSAcy04mBPiWKAGYYi+tIpCqgRU85J8IdYcUD6WCQ9CUwBrClmJBgvBVCbEWHkLfk9ZTLgqThGqu0yANanIX2UvKWbLhPgRXli3goszhrHLsOD43X9D79kcGANmHX6AAAAAElFTkSuQmCC"
+            alt="Profile"
+        /></a>
+      </nav>
+    </header>
+
+    <main class="main">
+      <section class="quiz-section active">
+        <div class="quiz-box">
+          <h2 class="question-text" id="question-text"></h2>
+          <div id="option-list" id="option-list"></div>
+          <div class="quiz-footer">
+            <span class="question-progress" id="question-progress"></span>
+            <button
+              class="next-button button"
+              id="nextBtn"
+              style="display: none"
+            >
+              Next Question
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="result-section">
+        <div class="result-box">
+          <h2>Quiz Result!</h2>
+          <p class="score-text">
+            Your Score: <span id="score"></span>/<span id="total-questions"
+              >0</span
+            >
+          </p>
+          <div class="result-buttons">
+            <button class="restart-button button" id="restartBtn">
+              Restart Quiz
+            </button>
+            <button class="home-button button" id="homeBtn">Home</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Embed server-rendered quiz data into a global variable -->
+    <script>
+      const quizData = <%- JSON.stringify(response) %>;
+    </script>
+
+    <script>
+      let score = 0;
+      let currentQuestionIndex = 0;
+
+      // Process the data: ensure your quizData has a 'results' property as per the API response
+      let questions = quizData.results.map((q) => ({
+        question: q.question,
+        correct: q.correct_answer,
+        options: [...q.incorrect_answers, q.correct_answer].sort(
+          () => Math.random() - 0.5
+        ),
+      }));
+
+      // Function to display a question
+      function showQuestion() {
+        document.getElementById("nextBtn").style.display = "none";
+        const currentQuestion = questions[currentQuestionIndex];
+        document.getElementById("question-text").innerHTML =
+          currentQuestion.question;
+
+        const optionList = document.getElementById("option-list");
+        optionList.innerHTML = "";
+
+        currentQuestion.options.forEach((option) => {
+          const optionDiv = document.createElement("div");
+          optionDiv.classList.add("option-item");
+          optionDiv.textContent = option;
+          optionDiv.addEventListener("click", () => selectOption(optionDiv));
+          optionList.appendChild(optionDiv);
+        });
+
+        document.getElementById("question-progress").textContent = `Question ${
+          currentQuestionIndex + 1
+        } of ${questions.length}`;
+      }
+
+      // Handle option selection
+      function selectOption(selectedDiv) {
+        const currentQuestion = questions[currentQuestionIndex];
+        const options = document.querySelectorAll(".option-item");
+
+        options.forEach((option) => {
+          option.style.pointerEvents = "none"; // Disable clicking further
+          if (option.textContent === currentQuestion.correct) {
+            option.style.backgroundColor = "#90EE90"; // correct answer in light green
+          }
+          if (
+            option === selectedDiv &&
+            option.textContent !== currentQuestion.correct
+          ) {
+            option.style.backgroundColor = "#FFB6C1"; // wrong answer in light red
+          }
+        });
+
+        if (selectedDiv.textContent === currentQuestion.correct) {
+          score++;
+        }
+        document.getElementById("nextBtn").style.display = "block";
+      }
+
+      // Handle the "Next Question" button
+      document.getElementById("nextBtn").addEventListener("click", () => {
+        currentQuestionIndex++;
+        if (currentQuestionIndex < questions.length) {
+          resetOptions();
+          showQuestion();
+        } else {
+          showResult();
+        }
+      });
+
+      // Reset the option styling and re-enable clicks
+      function resetOptions() {
+        const options = document.querySelectorAll(".option-item");
+        options.forEach((option) => {
+          option.style.backgroundColor = "white";
+          option.style.pointerEvents = "auto";
+        });
+        document.getElementById("nextBtn").style.display = "none";
+      }
+
+      // Show the final result
+      function showResult() {
+        document.querySelector(".quiz-section").classList.remove("active");
+        document.querySelector(".result-section").classList.add("active");
+        document.getElementById("score").textContent = score;
+        document.getElementById("total-questions").textContent =
+          questions.length;
+        fetch("/insert_result", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ score: score }),
+        })
+          .then((response) => response.text())
+          .then((result) => {
+            console.log(result);
+          })
+          .catch((error) => {
+            console.error("Error:", error);
+          });
+      }
+
+      // Restart and Home button functionality
+      document.getElementById("restartBtn").addEventListener("click", () => {
+        window.location.reload();
+      });
+
+      document.getElementById("homeBtn").addEventListener("click", () => {
+        window.location.href = "/";
+      });
+
+      // Initialize quiz by showing the first question
+      showQuestion();
+    </script>
+  </body>
+</html>
