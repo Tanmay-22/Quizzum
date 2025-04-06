@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
   
           console.log("Received response from server");
   
-          const data = await response.json();  // Convert response to JSON
+          const data = await response.json();  
           console.log("Received questions from server:", data);
   
           if (!data || !data.results) throw new Error("Invalid data format");
@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
           }));
   
           console.log("Processed questions:", questions);
-          showQuestion();  // Call function to display questions
+          showQuestion(); 
       } catch (error) {
           console.error("Error fetching questions:", error);
           alert("Failed to load questions. Please try again.");
